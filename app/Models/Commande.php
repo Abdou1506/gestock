@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Commande extends Model
 {
     use HasFactory;
-    protected $fillable=['commande_id','date','adresse','etat','client_id'];
+    protected $fillable=['commande_id','date','adresse','etat','client_id','produit_id'];
     /**
      * Get the fournisseur that owns the Commande
      *

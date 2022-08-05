@@ -9,13 +9,13 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">date commande</th>
+                        <th scope="col">Date Commande</th>
                         <th scope="col">Adresse</th>
                         <th scope="col">Etat</th>
-                        <th scope="col">qtecommandé</th>
-                        <th scope="col">prix</th>
-                        <th scope="col">nom client</th>
-                        <th scope="col">nom produit</th>
+                        <th scope="col">QteCommandé</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Nom Client</th>
+                        <th scope="col">Nom Produit</th>
                         <th scope="col">Action</th>
                         
 

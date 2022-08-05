@@ -23,6 +23,9 @@ class CreateCommandes extends Migration
             $table->unsignedBigInteger('client_id');
  
             $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('produit_id');
+ 
+            $table->foreign('produit_id')->references('id')->on('produits');
             
         });
     }

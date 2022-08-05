@@ -42,7 +42,6 @@ class CommandeController extends Controller
     public function store(Request $request)
     {
         $commande=Commande::create($request->all());
-       
         $commande->produit()->attach($request->produit_id);
         $commande->produit()->attach($request->qtecommande);
         $commande->produit()->attach($request->prix);
