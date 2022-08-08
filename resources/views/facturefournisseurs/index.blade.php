@@ -4,7 +4,7 @@
 @endsection
 @section('contenu')
 <div class="table_section padding_infor_info">
-  <div class="table-responsive-sm">
+  <div class="table-responsive-sm bg-light">
 <table class="table table-bordered" id="facturefournisseurs">
     <thead>
       <tr>
@@ -45,7 +45,7 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('facturefournisseurs.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a class="btn btn-primary" href="{{route('facturefournisseurs.edit',$f)}}"><i class="fa-solid fa-print"></i></a>
+        <a class="btn btn-primary" href="{{route('facturefournisseurs',$f->$produits->id)}}"><i class="fa-solid fa-print"></i></a>
 
         </td>
        
@@ -74,11 +74,19 @@ $t=0;
 </div>
 @endsection
 @push('scripts')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script  src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<scrip src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
 <script>
-$(document).ready( function () {
-    $('#facturefournisseurs').DataTable();
+$(document).ready(function() {
+	$('#facturefournisseurs').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			 'print'
+		]
+	} );
 } );
 </script>
 

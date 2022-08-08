@@ -43,6 +43,7 @@ class ProduitController extends Controller
         // $request->validate([
         //     "nom"=>'required|min:2|unique:fournisseurs'
         // ]);
+        // dd=($request->all());
         Produit::create($request->all());
         $produits=new Produit;
         if($request->hasfile('photo'))
@@ -50,7 +51,7 @@ class ProduitController extends Controller
             $file = $request->file('photo');
             $extention =file()->getClientOriginalExtension();
             $filename=time().'.'.$extention;
-            $file=move('images/'.$filename);
+            $file->move('images/'.$filename);
             $produits->photo=$filename;
             
            

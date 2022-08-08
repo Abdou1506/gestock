@@ -43,3 +43,7 @@ Route::resource('factureclients',FacturecController::class);
 Route::resource('facturefournisseurs',FacturefController::class);
 Route::resource('clients',ClientController::class);
 Route::resource('commandes',CommandeController::class);
+// Route::get('/facturefournisseurs/test',[facturefController::class, 'test'] );
+Route::get('facturefournisseurs/test', function () {
+    return view('facturefournisseurs/test');
+});

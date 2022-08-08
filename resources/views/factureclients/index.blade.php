@@ -45,7 +45,7 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('factureclients.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a class="btn btn-primary" href="{{route('factureclients.destroy',$f->id)}}">
+        <a class="btn btn-primary" href="{{route('factureclients',$f->id)}}">
           <i class="fa-solid fa-print"></i></a>
 
         </td>

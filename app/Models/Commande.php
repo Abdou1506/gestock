@@ -29,7 +29,8 @@ class Commande extends Model
      */
     public function produit(): BelongsToMany
     {
-        return $this->belongsToMany(Produit::class);
+        return $this->belongsToMany(Produit::class)6>withPivot(['qtecommande','prix']);
+
     }
     /**
      * Get the client that owns the Commande

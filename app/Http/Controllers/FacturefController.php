@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Facturefournisseur;
 use App\Models\Fournisseur;
+use App\Models\Produit;
 
 use Illuminate\Http\Request;
 
@@ -99,4 +100,8 @@ class FacturefController extends Controller
         return redirect()->route('facturefournisseurs.index')->with('notice','la suppression facture effectuée avec succés');
 
     }
+   public function test()
+   {
+    return view('facturefournisseurs.test');
+   }
 }

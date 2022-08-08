@@ -33,6 +33,7 @@
             <input type="text" class="form-control" name="prix">
 
         </div>
+    
                 <div class="mb-3">
                     <label for="nom" class="label-control">Nom client</label>
                     <select name="client_id" class="form-select" id="">
