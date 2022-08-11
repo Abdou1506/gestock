@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 Route::get('/template', function () {
     return view('templates');
@@ -47,3 +47,8 @@ Route::resource('commandes',CommandeController::class);
 Route::get('facturefournisseurs/test', function () {
     return view('facturefournisseurs/test');
 });
+Auth::routes();
+
+
+Route::get('/home', [App\Http\Controllers\ProduitController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

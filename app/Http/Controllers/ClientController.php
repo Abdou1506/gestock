@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['index']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +43,10 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nom'=>'required|min:2',
+            'email'=>'required|unique:clients'
+        ]);
        Client::create($request->all());
         return redirect()->route('clients.index')->with('notice','ajout client effectué avec succé');
    

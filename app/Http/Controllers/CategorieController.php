@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['index']);
+    }
     /**
      * Display a listing of the resource.
      *

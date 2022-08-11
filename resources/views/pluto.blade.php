@@ -53,12 +53,12 @@
     <div class="full_container">
         <div class="inner_container">
             <!-- Sidebar  -->
-            @include('side', ['nom' => 'abdou ndiaye', 'role' => 'admin'])
+            @include('side', ['nom' => 'Auth::user()->name', 'role' => 'admin'])
             <!-- end sidebar -->
             <!-- right content -->
             <div id="content">
                 <!-- topbar -->
-                @include('topbar', ['nom' => 'abdou ndiaye', 'role' => 'admin'])
+                @include('topbar', ['nom' =>'Auth::user()->name', 'role' => 'admin'])
                 <!-- end topbar -->
                 <!-- dashboard inner -->
                 <div class="midde_cont">
