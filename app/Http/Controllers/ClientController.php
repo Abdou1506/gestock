@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class ClientController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('Auth')->except(['index']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('Auth')->except(['index']);
+    // }
     /**
      * Display a listing of the resource.
      *

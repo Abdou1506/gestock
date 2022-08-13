@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\FounisseurController;
 use App\Http\Controllers\ProduitController;
@@ -20,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 Route::get('/template', function () {
     return view('templates');
 });
@@ -35,20 +36,19 @@ Route::get('/pluto', function () {
 Route::get('/temp', function () {
     return view('temp');
 });
-Route::resource('categories', CategorieController::class);
+Route::resource('categories', CategorieController::class)->middleware('auth');
 Route::resource('fournisseurs',FounisseurController::class);
-Route::resource('produits',ProduitController::class);
+Route::resource('produits',ProduitController::class)->middleware('auth');
 
-Route::resource('factureclients',FacturecController::class);
-Route::resource('facturefournisseurs',FacturefController::class);
-Route::resource('clients',ClientController::class);
-Route::resource('commandes',CommandeController::class);
+Route::resource('factureclients',FacturecController::class)->middleware('auth');
+Route::resource('facturefournisseurs',FacturefController::class)->middleware('auth');
+Route::resource('clients',ClientController::class)->middleware('auth');
+Route::resource('commandes',CommandeController::class)->middleware('auth');
 // Route::get('/facturefournisseurs/test',[facturefController::class, 'test'] );
 Route::get('facturefournisseurs/test', function () {
     return view('facturefournisseurs/test');
 });
 Auth::routes();
 
-
-Route::get('/home', [App\Http\Controllers\ProduitController::class, 'index'])->name('home');
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\ProduitController::class, 'index'])->name('home')->middleware('auth');

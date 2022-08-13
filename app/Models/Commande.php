@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Commande extends Model
 {
     use HasFactory;
-    protected $fillable=['commande_id','date','adresse','etat','client_id','produit_id'];
+    protected $fillable=['commande_id','date','adresse','etat','client_id'];
     /**
      * Get the fournisseur that owns the Commande
      *
@@ -29,7 +29,7 @@ class Commande extends Model
      */
     public function produit(): BelongsToMany
     {
-        return $this->belongsToMany(Produit::class)6>withPivot(['qtecommande','prix']);
+        return $this->belongsToMany(Produit::class)->withPivot('commande_produit','qtecommande','prix');
 
     }
     /**

@@ -25,12 +25,12 @@
         </div>
         <div class="mb-3">
             <label for="qtecommande" class="label-control">qtecommandé</label>
-            <input type="text" class="form-control" name="qtecommande">
+            <input type="number" class="form-control" name="qtecommande">
 
         </div>
         <div class="mb-3">
             <label for="prix" class="label-control">Prix</label>
-            <input type="text" class="form-control" name="prix">
+            <input type="number" class="form-control" name="prix">
 
         </div>
     

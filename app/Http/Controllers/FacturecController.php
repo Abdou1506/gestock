@@ -9,10 +9,7 @@ use Illuminate\Http\Request;
 class FacturecController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('Auth')->except(['index']);
-    }
+   
     /**
      * Display a listing of the resource.
      *

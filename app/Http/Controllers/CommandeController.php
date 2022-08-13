@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 class CommandeController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('Auth')->except(['index']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('Auth')->except(['index']);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -47,11 +47,19 @@ class CommandeController extends Controller
      */
     public function store(Request $request)
     {
-        $commande=Commande::create($request->all());
-        $commande->produit()->attach($request->produit_id);
-        $commande->produit()->attach($request->qtecommande);
-        $commande->produit()->attach($request->prix);
-        return redirect()->route('commandes.index')->with('notice','ajout commande effectué avec succé');
+        $commande= new Commande;
+        $commande->date=$request->date;
+        $commande->adresse=$request->adresse;
+        $commande->etat=$request->etat;
+        $commande->client_id=$request->client_id;
+        $commande->save();
+        $commande->produit()->attach([$request->produit_id,$request->qtecommande,$request->prix]);
+        $commande->save();
+        
+        
+    
+        
+        //  return redirect()->route('commandes.index')->with('notice','ajout commande effectué avec succé');
    
     }
 

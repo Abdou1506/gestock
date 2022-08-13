@@ -30,6 +30,6 @@ class CreatePivotTableFactureclientProduit extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pivot_table_factureclient_produit');
+        Schema::dropIfExists('factureclient_produit');
     }
 }

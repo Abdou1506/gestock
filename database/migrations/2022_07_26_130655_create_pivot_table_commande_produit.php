@@ -15,10 +15,10 @@ class CreatePivotTableCommandeProduit extends Migration
     {
         Schema::create('commande_produit', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('commande_id')->constrained()->oneDelete('cascade');
-            $table->foreignid('produit_id')->constrained()->oneDelete('cascade');
-            $table->string('qtecommande');
-            $table->string('prix');
+            $table->foreignId('commande_id')->constrained()->oneDelete('cascade');
+            $table->foreignId('produit_id')->constrained()->oneDelete('cascade');
+            $table->integer('qtecommande');
+            $table->integer('prix');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePivotTableCommandeProduit extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pivot_table_commande_produit');
+        Schema::dropIfExists('commande_produit');
     }
 }
