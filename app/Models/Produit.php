@@ -26,7 +26,7 @@ public function categorie(): BelongsTo
  */
 public function commande(): BelongsToMany
 {
-    return $this->belongsToMany(Commande::class,'commande_produit');
+    return $this->belongsToMany(Commande::class);
 }
 
 /**

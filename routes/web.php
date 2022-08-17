@@ -51,4 +51,5 @@ Route::resource('commandes',CommandeController::class)->middleware('auth');
 Auth::routes();
 
 //    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/commandes/produits/edit/{$id}', [App\Http\Controllers\CommandeController::class, 'commande_produit_edit'])->name('commandes.produits.edit');
 Route::get('/', [App\Http\Controllers\ProduitController::class, 'index'])->name('home')->middleware('auth');

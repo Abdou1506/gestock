@@ -24,16 +24,16 @@
                 <input type="text" class="form-control" name="etat" value="{{old('etat',$commandes->etat)}}">
 
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
             <label for="qtecommande" class="label-control">qtecommandé</label>
             <input type="text" class="form-control" name="qtecommande" value="{{old('qtecommande',$commandes->qtecommande)}}">
 
-        </div>
-        <div class="mb-3">
+        </div> --}}
+        {{-- <div class="mb-3">
             <label for="prix" class="label-control">Prix</label>
             <input type="text" class="form-control" name="prix" value="{{old('prix',$commandes->prix)}}">
 
-        </div>
+        </div> --}}
             <div class="mb-3">
                 <label for="nom" class="label-control">Nom client</label>
                 <select name="client_id" class="form-select" id="" value="{{old('client_id',$commandes->client_id)}}">
@@ -43,7 +43,7 @@
     
                 </select>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="nom" class="label-control">Nom produit</label>
                 <select name="produit_id" class="form-select" id="" value="{{old('produit_id',$commandes->produit_id)}}">
                     @foreach ($produits as $p)
@@ -51,7 +51,7 @@
                     @endforeach
     
                 </select>
-            </div>
+            </div> --}}
             <div class="mb-3 rounded">
                 <button class="btn btn-primary col-12">Modifier</button>
             </div>

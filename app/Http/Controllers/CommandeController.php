@@ -23,9 +23,10 @@ class CommandeController extends Controller
     public function index()
     {
         $commandes=Commande::with(['produit','client'])->get();
-        // dd($commandes);
+        //dd($commandes);
         return view('commandes.index' , compact('commandes'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,19 +48,20 @@ class CommandeController extends Controller
      */
     public function store(Request $request)
     {
+
         $commande= new Commande;
         $commande->date=$request->date;
         $commande->adresse=$request->adresse;
         $commande->etat=$request->etat;
         $commande->client_id=$request->client_id;
         $commande->save();
-        $commande->produit()->attach([$request->produit_id,$request->qtecommande,$request->prix]);
-        $commande->save();
+        //$commande->produit()->attach([$request->produit_id,$request->qtecommande,$request->prix]);
+       
         
         
     
         
-        //  return redirect()->route('commandes.index')->with('notice','ajout commande effectué avec succé');
+        return redirect()->route('commandes.index')->with('notice','ajout commande effectué avec succé');
    
     }
 
@@ -117,4 +119,11 @@ class CommandeController extends Controller
         return redirect()->route('commandes.index')->with('notice','la suppression de la commande effectuée avec succés');
 
     }
+    function commande_produit_edit($id)
+    {
+       //$produits=$request->produit_ids();
+       //$qtes=$request->qtes();
+       return view('commandes.commandes_produits_edit',compact('id'));
+    }
+
 }

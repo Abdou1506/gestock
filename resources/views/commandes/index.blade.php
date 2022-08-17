@@ -12,8 +12,8 @@
                         <th scope="col">Date Commande</th>
                         <th scope="col">Adresse</th>
                         <th scope="col">Etat</th>
-                        <th scope="col">QteCommandé</th>
-                        <th scope="col">Prix</th>
+                        {{-- <th scope="col">QteCommandé</th> --}}
+                        {{-- <th scope="col">Prix</th> --}}
                         <th scope="col">Nom Client</th>
                         <th scope="col">Nom Produit</th>
                         <th scope="col">Action</th>
@@ -28,12 +28,14 @@
                             <td>{{ $c->date }}</td>
                             <td>{{ $c->adresse }}</td>
                             <td>{{ $c->etat }}</td>
-                            <td>{{ $c->qtecommande }}</td>
-                            <td>{{ $c->prix }}</td>
+                            {{-- <td>{{ $c->qtecommande }}</td> --}}
+                            {{-- <td>{{ $c->prix }}</td> --}}
                             <td>{{$c->client->nom}}</td>
-                            @foreach ($c->produit as $p)
-                            <td>{{$p->libelle}}</td>
-                            @endforeach
+                            <td>
+                                @foreach ($c->produit as $p)
+                                {{$p->libelle}}
+                                @endforeach
+                            </td>
                             <td class="btn-group">
                                 <form method="post" action="{{ route('commandes.destroy', $c->id) }}"
                                     onclick="return confirm('supprimer?')">
@@ -44,6 +46,8 @@
                                 </form>
                                 <a class="btn btn-warning" href="{{ route('commandes.edit', $c) }}"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
+                                <a class="btn btn-warning" href="{{ route('commandes.produits.edit', $c->id) }}"><i
+                                        class="fa-solid fa-pen-to-square">Edition</i></a>
 
                             </td>
 

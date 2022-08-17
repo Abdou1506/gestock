@@ -2,6 +2,7 @@
 @section('titre')
     Nom du produit
 @endsection
+
 @section('contenu')
 <div class="col-md-6 m-3 mx-auto shadow p-2">
     <form action="{{route('produits.store')}}" method="POST" enctype="multipart/form-data">

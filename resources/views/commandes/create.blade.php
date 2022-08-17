@@ -23,13 +23,13 @@
             <input type="text" class="form-control" name="etat">
 
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <label for="qtecommande" class="label-control">qtecommandé</label>
             <input type="number" class="form-control" name="qtecommande">
 
         </div>
         
-    
+     --}}
                 <div class="mb-3">
                     <label for="nom" class="label-control">Nom client</label>
                     <select name="client_id" class="form-select" id="">
@@ -41,7 +41,7 @@
         
                     </select>
                 </div>
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="nom" class="label-control">Nom produit</label>
                     <select name="produit_id[]" multiple  class="form-select" id="">
                      <option value="" selected>.......</option>
@@ -50,7 +50,7 @@
                         @endforeach
         
                     </select>
-                </div>
+                </div> --}}
                 <div class="mb-3 rounded">
                     <button class="btn btn-primary col-12">Ajouter</button>
                 </div>
