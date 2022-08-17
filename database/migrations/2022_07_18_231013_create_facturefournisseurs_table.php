@@ -16,8 +16,8 @@ class CreateFacturefournisseursTable extends Migration
         Schema::create('facturefournisseurs', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->string('qte');
-            $table->string('prix');
+            $table->integer('qte');
+            $table->integer('prix');
             $table->timestamps();
             $table->unsignedBigInteger('fournisseur_id');
  

@@ -16,8 +16,8 @@ class CreateFactureclientsTable extends Migration
         Schema::create('factureclients', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->string('qte');
-            $table->string('prix');
+            $table->integer('qte');
+            $table->integer('prix');
             $table->timestamps();
             $table->unsignedBigInteger('client_id');
  

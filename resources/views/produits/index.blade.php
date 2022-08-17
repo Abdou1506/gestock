@@ -26,7 +26,7 @@
       <tr>
         <th scope="row">{{$p->id}}</th>
         <td>
-          <img src="{{asset('images/'. $p->photo)}}" width="100px;" height="100px;">
+          <img src="{{asset('images/'. $p->photo)}}" width="100px"  height="100px">
         </td>
         <td>{{$p->libelle}}</td>
         <td>{{$p->qte}}</td>

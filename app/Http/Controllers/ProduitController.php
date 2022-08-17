@@ -42,24 +42,18 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     "nom"=>'required|min:2|unique:fournisseurs'
-        // ]);
-        // dd=($request->all());
-        Produit::create($request->all());
-        $produits=new Produit;
-        if($request->hasfile('photo'))
-        {
-            $file = $request->file('photo');
-            $extention =file()->getClientOriginalExtension();
-            $filename=time().'.'.$extention;
-            $file->move('images/'.$filename);
-            $produits->photo=$filename;
-            
-           
-            
-        }
-        $produits=save();
+        $produit=new Produit;
+        $produit->libelle = $request->libelle;
+        $produit->qte = $request->qte;
+        $produit->prix_unitaire = $request->prix_unitaire;
+        $produit->categorie_id = $request->categorie_id;
+        $produit->fournisseur_id = $request->fournisseur_id;
+        $file = $request->file('photo');
+        $extension=$file->getClientOriginalExtension();
+        $filename=time().'.'.$extension;
+        $file->move('images/',$filename);   
+        $produit->photo=$filename;
+        $produit->save();
         return redirect()->route('produits.index')->with('notice','ajout produit effectué avec succé');
     }
 
@@ -110,6 +104,9 @@ class ProduitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produits=Produit::find($id);
+        $produits->delete();
+        return redirect()->route('produits.index')->with('notice','la suppression produit effectuée avec succés');
+
     }
 }

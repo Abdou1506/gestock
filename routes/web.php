@@ -45,9 +45,9 @@ Route::resource('facturefournisseurs',FacturefController::class)->middleware('au
 Route::resource('clients',ClientController::class)->middleware('auth');
 Route::resource('commandes',CommandeController::class)->middleware('auth');
 // Route::get('/facturefournisseurs/test',[facturefController::class, 'test'] );
-Route::get('facturefournisseurs/test', function () {
-    return view('facturefournisseurs/test');
-});
+// Route::get('facturefournisseurs/test', function () {
+//     return view('facturefournisseurs/test');
+// });
 Auth::routes();
 
 //    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

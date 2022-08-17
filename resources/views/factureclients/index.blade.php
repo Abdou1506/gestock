@@ -45,8 +45,8 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('factureclients.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a class="btn btn-primary" href="{{route('factureclients',$f->id)}}">
-          <i class="fa-solid fa-print"></i></a>
+        {{-- <a class="btn btn-primary" href="{{route('factureclients',$f->id)}}">
+          <i class="fa-solid fa-print"></i></a> --}}
 
         </td>
        
@@ -77,11 +77,11 @@ $t=0;
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script>
+{{-- <script>
 $(document).ready( function () {
     $('#factureclients').DataTable();
 } );
-</script>
+</script> --}}
 
 
 @endpush

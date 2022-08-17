@@ -17,8 +17,8 @@ class CreatePivotTableFactureclientProduit extends Migration
             $table->id();
             $table->foreignid('factureclient_id')->constrained()->oneDelete('cascade');
             $table->foreignid('produit_id')->constrained()->oneDelete('cascade');
-            $table->string('qte');
-            $table->string('prix');
+            $table->integer('qte');
+            $table->integer('prix');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreatePivotTableCommandeProduit extends Migration
             $table->foreignId('commande_id')->constrained()->oneDelete('cascade');
             $table->foreignId('produit_id')->constrained()->oneDelete('cascade');
             $table->integer('qtecommande');
-            $table->integer('prix');
+            
             $table->timestamps();
         });
     }

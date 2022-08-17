@@ -8,7 +8,7 @@
         @csrf
         <div class="mb-3">
             <label for="photo" class="label-control">photo</label>
-            <input type="file" class="form-control" name="photo">
+            <input type="file" class="form-control" name="photo" >
 
         </div>
         <div class="mb-3">

@@ -18,8 +18,8 @@ class CreateProduitsTable extends Migration
             $table->id();
             $table->string('photo');
             $table->string('libelle');
-            $table->string('qte');
-            $table->string('prix_unitaire');
+            $table->integer('qte');
+            $table->integer('prix_unitaire');
             $table->timestamps();
             $table->unsignedBigInteger('categorie_id');
  

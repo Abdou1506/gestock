@@ -28,15 +28,13 @@
             <input type="number" class="form-control" name="qtecommande">
 
         </div>
-        <div class="mb-3">
-            <label for="prix" class="label-control">Prix</label>
-            <input type="number" class="form-control" name="prix">
-
-        </div>
+        
     
                 <div class="mb-3">
                     <label for="nom" class="label-control">Nom client</label>
                     <select name="client_id" class="form-select" id="">
+                            <option value="" selected>.......</option>
+
                         @foreach ($clients as $c)
                             <option value="{{ $c->id }}">{{ $c->nom }}</option>
                         @endforeach
@@ -45,7 +43,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="nom" class="label-control">Nom produit</label>
-                    <select name="produit_id" class="form-select" id="">
+                    <select name="produit_id[]" multiple  class="form-select" id="">
+                     <option value="" selected>.......</option>
                         @foreach ($produits as $p)
                             <option value="{{ $p->id }}">{{ $p->libelle }}</option>
                         @endforeach
