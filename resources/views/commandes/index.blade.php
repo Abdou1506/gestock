@@ -46,8 +46,8 @@
                                 </form>
                                 <a class="btn btn-warning" href="{{ route('commandes.edit', $c) }}"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
-                                <a class="btn btn-warning" href="{{ route('commandes.produits.edit', $c->id) }}"><i
-                                        class="fa-solid fa-pen-to-square">Edition</i></a>
+                                <a class="btn btn-success" href="{{ route('commandes.produits.edit', $c->id) }}"><i
+                                        class="fa-solid fa-pen-to-square">E</i></a>
 
                             </td>
 
