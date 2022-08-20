@@ -5,7 +5,7 @@
 @section('contenu')
 <div class="table_section padding_infor_info">
   <div class="table-responsive-sm">
-<table class="table table-bordered" id="factureclients">
+<table class="table table-striped" id="factureclients">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -45,8 +45,7 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('factureclients.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        {{-- <a class="btn btn-primary" href="{{route('factureclients',$f->id)}}">
-          <i class="fa-solid fa-print"></i></a> --}}
+        <a class="btn btn-primary" href="#" onclick="print()"><i class="fa-solid fa-print"></i></a>
 
         </td>
        

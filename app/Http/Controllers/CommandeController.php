@@ -119,11 +119,26 @@ class CommandeController extends Controller
         return redirect()->route('commandes.index')->with('notice','la suppression de la commande effectuée avec succés');
 
     }
-    function commande_produit_edit($id)
+    function cpe($id=0)
     {
+       // dd("ok");
        //$produits=$request->produit_ids();
        //$qtes=$request->qtes();
-       return view('commandes.commandes_produits_edit',compact('id'));
+       $commandes=Commande::find($id);
+       $produits=Produit::all();
+       return view('commandes/commandes_produits_edit',compact('commandes','produits'));
     }
+    public function cps(Request $request, $id)
+{
+        $commandes=Commande::find($id);
+       
+
+       $commandes->produit()->attach($request->produit_id,['qtecommande'=>$request->qtecommande]);
+    $produits=Produit::all();
+
+return view('commandes/commandes_produits_edit',compact('commandes','produits'));        
+   
+    }
+
 
 }

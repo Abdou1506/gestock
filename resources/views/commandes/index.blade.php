@@ -5,7 +5,7 @@
 @section('contenu')
     <div class="table_section padding_infor_info">
         <div class="table-responsive-sm">
-            <table class="table table-bordered" id="commandes">
+            <table class="table table-striped" id="commandes">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

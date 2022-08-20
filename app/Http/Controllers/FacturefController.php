@@ -105,8 +105,9 @@ class FacturefController extends Controller
         return redirect()->route('facturefournisseurs.index')->with('notice','la suppression facture effectuée avec succés');
 
     }
-   public function test()
+   public function test($id)
    {
-    return view('facturefournisseurs.test');
+    $facturefournisseurs=Facturefournisseur::all();
+    return view('facturefournisseurs.test', compact('facturefournisseurs'));
    }
 }

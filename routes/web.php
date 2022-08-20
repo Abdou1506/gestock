@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+// Route::get('c/p/{id}', function ($id=0) {
+  //  return view('home');
+ //});
 Route::get('/template', function () {
     return view('templates');
 });
@@ -44,12 +44,15 @@ Route::resource('factureclients',FacturecController::class)->middleware('auth');
 Route::resource('facturefournisseurs',FacturefController::class)->middleware('auth');
 Route::resource('clients',ClientController::class)->middleware('auth');
 Route::resource('commandes',CommandeController::class)->middleware('auth');
-// Route::get('/facturefournisseurs/test',[facturefController::class, 'test'] );
-// Route::get('facturefournisseurs/test', function () {
-//     return view('facturefournisseurs/test');
-// });
+//Route::get('/facturefournisseurs/test',[facturefController::class, 'test'] );
+Route::get('f/test', function ($id=1) {
+    
+     return view('facturefournisseurs/test');
+ });
 Auth::routes();
-Route::get('/commandes/produits/edit/{$id}', [App\Http\Controllers\CommandeController::class, 'commande_produit_edit'])->name('commandes.produits.edit');
+Route::get('c/p/{id}', [CommandeController::class, 'cpe'])->name('commandes.produits.edit');
+Route::post('c/p/{id}', [CommandeController::class, 'cps'])->name('commandes.produits.store');
+Route::get('f/c/{id}', [FacturefController::class, 'test'])->name('commandes.produits.print');
 
 //    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\ProduitController::class, 'index'])->name('home')->middleware('auth');

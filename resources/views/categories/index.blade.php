@@ -7,7 +7,7 @@
     <div class="table_section padding_infor_info">
     <a href="{{route('categories.create')}}" class="btn btn-primary"> Ajouter categorie</a>
         <div class="table-responsive-sm">
-            <table class="table table-bordered" id="categories">
+            <table class="table table-striped" id="categories">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

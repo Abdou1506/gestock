@@ -5,7 +5,7 @@
 @section('contenu')
 <div class="table_section padding_infor_info">
   <div class="table-responsive-sm bg-light">
-<table class="table table-bordered" id="facturefournisseurs">
+<table class="table table-striped" id="facturefournisseurs">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -45,7 +45,7 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('facturefournisseurs.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        {{-- <a class="btn btn-primary" href="{{route('facturefournisseurs',$f->$produits->id)}}"><i class="fa-solid fa-print"></i></a> --}}
+        <a class="btn btn-primary" href="{{ route('facturefournisseurs.produits.print', $f->id) }}" onclick="print()"><i class="fa-solid fa-print"></i></a>
 
         </td>
        
@@ -85,7 +85,10 @@ $(document).ready(function() {
 		dom: 'Bfrtip',
 		buttons: [
 			 'print'
-		]
+		],
+    printme(){
+      window.print();
+    }
 	} );
 } );
 </script>
