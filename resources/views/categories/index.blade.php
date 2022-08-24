@@ -10,7 +10,7 @@
             <table class="table table-striped" id="categories">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">##</th>
                         <th scope="col">Nom Categorie</th>
                         <th scope="col">Action</th>
 
