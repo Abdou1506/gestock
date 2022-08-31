@@ -50,6 +50,7 @@ Route::get('f/test', function ($id=1) {
      return view('facturefournisseurs/test');
  });
 Auth::routes();
+Route::middleware(['auth','role:admin']);
 Route::get('c/p/{id}', [CommandeController::class, 'cpe'])->name('commandes.produits.edit');
 Route::post('c/p/{id}', [CommandeController::class, 'cps'])->name('commandes.produits.store');
 Route::get('f/c/{id}', [FacturefController::class, 'test'])->name('commandes.produits.print');

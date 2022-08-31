@@ -4,6 +4,8 @@
 @endsection
 @section('contenu')
     <div class="table_section padding_infor_info">
+<a href="{{route('clients.create')}}" class="btn btn-primary"> Ajouter client</a>
+
         <div class="table-responsive-sm">
             <table class="table table-striped" id="clients">
                 <thead>

@@ -4,6 +4,8 @@
 @endsection
 @section('contenu')
 <div class="table_section padding_infor_info">
+<a href="{{route('facturefournisseurs.create')}}" class="btn btn-primary"> Ajouter facturefournisseur</a>
+
   <div class="table-responsive-sm bg-light">
 <table class="table table-striped" id="facturefournisseurs">
     <thead>
