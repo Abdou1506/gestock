@@ -47,7 +47,7 @@ $t=0;
           
         </form>
         <a class="btn btn-warning" href="{{route('facturefournisseurs.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a class="btn btn-primary" href="{{ route('facturefournisseurs.produits.print', $f->id) }}" onclick="print()"><i class="fa-solid fa-print"></i></a>
+        <a class="btn btn-primary" href="{{ route('facturefournisseur.produits.print', $f->id) }}" ><i class="fa-solid fa-print"></i></a>
 
         </td>
        

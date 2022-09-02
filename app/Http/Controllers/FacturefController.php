@@ -107,7 +107,7 @@ class FacturefController extends Controller
     }
    public function test($id)
    {
-    $facturefournisseurs=Facturefournisseur::all();
+    $facturefournisseurs=Facturefournisseur::find($id);
     return view('facturefournisseurs.test', compact('facturefournisseurs'));
    }
 }

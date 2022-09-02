@@ -56,7 +56,7 @@ class FacturecController extends Controller
     public function show($id)
     {
         $factureclients=Factureclient::find($id);
-    return view('factureclients/show', compact('factures'));
+    return view('factureclients/show', compact('factureclients'));
     }
 
     /**

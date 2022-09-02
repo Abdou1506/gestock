@@ -62,17 +62,16 @@ Nom de la commande
                         
                     </td>
                     <td class="btn-group">
-                        {{-- <form method="post" action="{{ route('commandes.destroy', $c->id) }}"
+                         <form method="post" action="{{ route('commandes.produits.destroy', $c->id) }}"
                             onclick="return confirm('supprimer?')">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
 
                         </form>
-                        <a class="btn btn-warning" href="{{ route('commandes.edit', $c) }}"><i
+                        <a class="btn btn-warning" href="{{ route('commandes.produits.edit', $c) }}"><i
                                 class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-success" href="{{ route('commandes.produits.edit', $c->id) }}"><i
-                                class="fa-solid fa-pen-to-square">E</i></a> --}}
+                       
 
                     </td>
 
