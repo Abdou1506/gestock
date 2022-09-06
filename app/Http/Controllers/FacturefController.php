@@ -110,4 +110,34 @@ class FacturefController extends Controller
     $facturefournisseurs=Facturefournisseur::find($id);
     return view('facturefournisseurs.test', compact('facturefournisseurs'));
    }
+   function ffp($id = 0)
+   {
+       // dd("ok");
+       //$produits=$request->produit_ids();
+       //$qtes=$request->qtes();
+       $facturefournisseurs = Facturefournisseur::find($id);
+       $produits = Produit::all();
+
+       return view('facturefournisseurs/facturefournisseurs_produits', compact('facturefournisseurs', 'produits'));
+   }
+   public function ffs(Request $request, $id)
+   {
+       $facturefournisseurs = Facturefournisseur::find($id);
+
+
+       $facturefournisseurs->produit()->attach($request->produit_id, ['qte' => $request->qte,'prix' => $request->prix]);
+       $produits = Produit::all();
+
+       return view('facturefournisseurs/facturefournisseurs_produits', compact('facturefournisseurs', 'produits'));
+   }
+   public function supsf($id)
+   {
+       // DB::table('commande_produit')->where('id',$id)->delete();
+
+       $facturefournisseur=facturefournisseur::findOrFail($id);
+      $facturefournisseur->produit()->detach();
+   
+   return redirect()->route('facturefournisseurs/index')->with('notice','la suppression de la facturefournisseur effectuée avec succés');
+
+   }
 }

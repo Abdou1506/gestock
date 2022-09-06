@@ -55,7 +55,17 @@ Route::post('c/p/{id}', [CommandeController::class, 'cps'])->name('commandes.pro
 Route::get('f/c/{id}', [FacturefController::class, 'test'])->name('commandes.produits.print');
 Route::delete('f/dest/{id}', [CommandeController::class, 'sup'])->name('commandes.produits.destroy');
 Route::get('facturefournisseur/produits/print/{id}', [FacturefController::class, 'test'])->name('facturefournisseur.produits.print');
+
 // Route::delete('f/edit/{id}', [CommandeController::class, 'sup'])->name('commandes.produits.edit');
+Route::get('factureclients/produit/{id}', [FacturecController::class, 'fcp'])->name('factureclients.produits.edit');
+Route::post('factureclients/produit/{id}', [FacturecController::class, 'fcs'])->name('factureclients.produits.store');
+Route::delete('ff/d/{id}', [FacturecController::class, 'sups'])->name('factureclients.produits.destroy');
+
+
 
 //    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('ff/p/{id}', [FacturefController::class, 'ffp'])->name('facturefournisseurs.produits.edit');
+Route::post('ff/p/{id}', [FacturefController::class, 'ffs'])->name('facturefournisseurs.produits.store');
+Route::delete('ff/pd/{id}', [FacturefController::class, 'supsf'])->name('facturefournisseurs.produits.destroy');
+
 Route::get('/', [App\Http\Controllers\ProduitController::class, 'index'])->name('home')->middleware('auth');

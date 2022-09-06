@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Factureclient;
 use App\Models\Client;
+use App\Models\Produit;
 use Illuminate\Http\Request;
 
 class FacturecController extends Controller
@@ -98,6 +99,36 @@ class FacturecController extends Controller
         $factureclients=Factureclient::find($id);
         $factureclients->delete();
         return redirect()->route('factureclients.index')->with('notice','la suppression facture effectuée avec succés');
+
+    }
+    function fcp($id = 0)
+    {
+        // dd("ok");
+        //$produits=$request->produit_ids();
+        //$qtes=$request->qtes();
+        $factureclients = Factureclient::find($id);
+        $produits = Produit::all();
+
+        return view('factureclients/factureclients_produits', compact('factureclients', 'produits'));
+    }
+    public function fcs(Request $request, $id)
+    {
+        $factureclients = Factureclient::find($id);
+
+
+        $factureclients->produit()->attach($request->produit_id, ['qte' => $request->qte,'prix' => $request->prix]);
+        $produits = Produit::all();
+
+        return view('factureclients/factureclients_produits', compact('factureclients', 'produits'));
+    }
+    public function sups($id)
+    {
+        // DB::table('commande_produit')->where('id',$id)->delete();
+
+        $factureclient=Factureclient::findOrFail($id);
+       $factureclient->produit()->detach();
+    
+    return redirect()->route('factureclients/index')->with('notice','la suppression de la factureclient effectuée avec succés');
 
     }
 }

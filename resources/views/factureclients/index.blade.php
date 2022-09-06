@@ -40,15 +40,10 @@ $t=0;
         <td>{{$f->client->nom}}</td>
         
         <td class="btn-group">
-          <form method="post" action="{{route('factureclients.destroy',$f->id)}}" onclick="return confirm('supprimer?')">
-            @csrf
-            @method('DELETE')
-          <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-          
-        </form>
+         
         <a class="btn btn-warning" href="{{route('factureclients.edit',$f)}}"><i class="fa-solid fa-pen-to-square"></i></a>
         <a class="btn btn-primary" href="{{ route('factureclients.show', $f->id) }}"><i class="fa-solid fa-print"></i></a>
-
+        <a class="btn btn-success" href="{{ route('factureclients.produits.edit', $f->id) }}"><i class="fa-solid fa-pen-to-square">E</i></a>
         </td>
        
         
